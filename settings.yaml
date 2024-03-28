@@ -4,14 +4,14 @@ mysql:
   db: gvb_db
   user: root
   password: root
-  log_level: dev
+  loglevel: dev
 
 logger:
   level: info
-  prefix: "[gvb]"
+  prefix: '[gvb]'
   director: log
-  show-line: true
-  log-in-console: true
+  showline: true
+  loginconsole: true
 
 
 system:
