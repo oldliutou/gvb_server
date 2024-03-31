@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"gvb_server/core"
 	"gvb_server/global"
+	"gvb_server/routers"
 )
 
 func main() {
@@ -14,5 +14,9 @@ func main() {
 	
 	// 连接数据库
 	global.DB = core.InitGorm()
-	fmt.Println(global.DB)
+	
+	router :=  routers.InitRouter()
+	addr := global.Config.System.Addr()
+	global.Log.Infof("gvb_server运行在[ %s ]\n",addr)
+	router.Run(addr)
 }
